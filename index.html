@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cara Mengatasi HP Lemot</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+color:white;
+overflow-x:hidden;
+}
+
+/* Background Animasi */
+.circle{
+position:fixed;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+animation:float 12s infinite ease-in-out;
+z-index:-1;
+}
+
+.c1{width:200px;height:200px;left:5%;top:10%;}
+.c2{width:150px;height:150px;right:8%;top:20%;animation-delay:2s;}
+.c3{width:250px;height:250px;left:30%;bottom:10%;animation-delay:5s;}
+
+@keyframes float{
+0%,100%{transform:translateY(0px);}
+50%{transform:translateY(-40px);}
+}
+
+header{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero{
+animation:fade 1.5s;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+color:#ddd;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 30px;
+background:#38bdf8;
+color:white;
+text-decoration:none;
+border-radius:50px;
+transition:.4s;
+}
+
+.btn:hover{
+background:#0ea5e9;
+transform:scale(1.1);
+box-shadow:0 0 20px #38bdf8;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+section{
+padding:80px 10%;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(8px);
+padding:25px;
+border-radius:20px;
+transition:.4s;
+opacity:0;
+transform:translateY(50px);
+}
+
+.card.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:rgba(255,255,255,.15);
+box-shadow:0 0 20px rgba(56,189,248,.5);
+}
+
+.card h2{
+margin-bottom:15px;
+color:#38bdf8;
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:#111827;
+margin-top:50px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+
+<header>
+<div class="hero">
+<h1>📱 Cara Mengatasi HP Lemot</h1>
+<p>Buat HP kembali cepat, ringan, dan nyaman digunakan.</p>
+<a href="#tips" class="btn">Lihat Tips</a>
+</div>
+</header>
+
+<section id="tips">
+<div class="cards">
+
+<div class="card">
+<h2>🧹 Bersihkan Cache</h2>
+<p>Hapus file cache aplikasi secara berkala agar penyimpanan tidak penuh.</p>
+</div>
+
+<div class="card">
+<h2>📦 Hapus Aplikasi Tidak Terpakai</h2>
+<p>Semakin sedikit aplikasi yang tidak digunakan, semakin ringan kinerja HP.</p>
+</div>
+
+<div class="card">
+<h2>📱 Update Sistem</h2>
+<p>Gunakan versi Android dan aplikasi terbaru agar performa lebih optimal.</p>
+</div>
+
+<div class="card">
+<h2>⚙ Kurangi Widget</h2>
+<p>Terlalu banyak widget dan wallpaper hidup dapat memperlambat HP.</p>
+</div>
+
+<div class="card">
+<h2>🔄 Restart HP</h2>
+<p>Restart minimal seminggu sekali untuk menyegarkan memori RAM.</p>
+</div>
+
+<div class="card">
+<h2>💾 Sisakan Ruang Penyimpanan</h2>
+<p>Usahakan ruang kosong minimal 20% dari kapasitas penyimpanan.</p>
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 Tips Teknologi | Dibuat dengan HTML, CSS & JavaScript
+</footer>
+
+<script>
+const cards=document.querySelectorAll(".card");
+
+window.addEventListener("scroll",()=>{
+cards.forEach(card=>{
+const top=card.getBoundingClientRect().top;
+if(top<window.innerHeight-80){
+card.classList.add("show");
+}
+});
+});
+</script>
+
+</body>
+</html>
